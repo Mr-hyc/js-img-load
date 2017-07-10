@@ -12,70 +12,16 @@
 </style>
 <body>
     <div class="con">
-        <p><img src="images/grey.gif" alt="" data-src="images/1.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/2.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/3.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/4.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/5.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/6.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/7.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/8.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/9.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/10.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/11.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/12.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/13.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/14.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/15.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/16.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/17.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/18.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/19.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/20.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/21.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/22.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/23.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/24.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/25.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/26.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/27.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/28.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/29.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/30.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/31.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/32.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/33.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/34.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/35.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/36.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/37.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/38.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/39.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/40.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/41.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/42.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/43.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/44.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/45.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/46.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/47.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/48.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/49.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/50.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/51.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/52.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/53.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/54.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/55.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/56.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/57.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/58.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/59.jpg"></p>
-        <p><img src="images/grey.gif" alt="" data-src="images/60.jpg"></p>
+       <script type="text/javascript">
+           for (var i = 1; i <= 60; i++) {
+               document.write('<p><img src="images/grey.gif" alt="" data-src="images/'+ i +'.jpg"></p>')
+           }
+       </script>
     </div>
 <script>
-
-    initial();
+    window.onload = function(){
+        initial();
+    }
     window.onscroll = function(){
         initial();
     }
