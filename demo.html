@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片的懒加载</title>
+</head>
+<style type="text/css" media="screen">
+    *{margin:0;padding:0;}
+    .con{width:90%;margin:0 auto;overflow: hidden;}
+    p{width: 235px;min-height: 90px;float:left;margin:10px;}
+    p>img{width: 100%;display: block}
+</style>
+<body>
+    <div class="con">
+        <p><img src="images/grey.gif" alt="" data-src="images/1.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/2.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/3.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/4.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/5.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/6.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/7.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/8.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/9.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/10.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/11.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/12.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/13.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/14.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/15.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/16.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/17.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/18.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/19.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/20.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/21.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/22.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/23.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/24.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/25.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/26.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/27.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/28.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/29.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/30.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/31.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/32.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/33.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/34.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/35.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/36.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/37.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/38.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/39.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/40.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/41.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/42.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/43.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/44.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/45.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/46.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/47.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/48.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/49.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/50.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/51.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/52.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/53.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/54.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/55.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/56.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/57.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/58.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/59.jpg"></p>
+        <p><img src="images/grey.gif" alt="" data-src="images/60.jpg"></p>
+    </div>
+<script>
+
+    initial();
+    window.onscroll = function(){
+        initial();
+    }
+
+    /*初始化方法*/
+    function initial(){
+        //获取页面中所有的图片
+        var AllImg = document.getElementsByTagName('img');
+        //获取页面滚动条的高度
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //获取页面可视高度
+        var Vheight = document.documentElement.clientHeight || document.body.clientHeight;
+        for (var i = 0; i < AllImg.length; i++) {
+            getTop(AllImg[i],Vheight,scrollTop);
+        };
+    }
+
+    //判断元素是否可视
+    function getTop(obj,Vh,scrollH){
+        if (obj.offsetTop <= Vh) {
+            setTimeout(function(){getSrc(obj)},500);
+        }else if(obj.offsetTop < Vh + scrollH){
+            setTimeout(function(){getSrc(obj)},500);
+        }else{
+            return false;
+        }
+    }
+
+    //图片路径
+    function getSrc(the){
+        var src = the.getAttribute('data-src');
+        the.setAttribute('src',src);
+    }
+</script>
+</body>
+</html>
